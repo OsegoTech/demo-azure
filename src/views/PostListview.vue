@@ -23,6 +23,8 @@ onMounted(() => {
     fetchPosts()
 })
 
+console.log(posts);
+
 </script>
 
 <style scoped>
