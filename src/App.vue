@@ -9,7 +9,7 @@ const post = ref({
 
 const submitForm = async() => {
   try {
-    const response = await axios.post("https://tutorialvideo.azurewebsites.net/api/v1/posts",post.value)
+    const response = await axios.post("/api/v1/posts",post.value)
     console.log('Response:', response);
   } catch (error) {
     console.log('Error:', error);
