@@ -12,7 +12,7 @@ import axios from "axios"
 const posts = ref([])
 const fetchPosts = async() => {
     try {
-        const response = await axios.get("http://localhost:8080/api/v1/posts")
+        const response = await axios.get("/api/v1/posts")
         console.log(response.data);
         posts.value = response.data.data
     } catch (error) {

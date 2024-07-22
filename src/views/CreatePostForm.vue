@@ -48,7 +48,7 @@ const isLoading = ref(false);
 const submitForm = async () => {
     isLoading.value = true;
     try {
-        const response = await axios.post("http://localhost:8080/api/v1/posts", post.value);
+        const response = await axios.post("/api/v1/posts", post.value);
         console.log('Response:', response);
     } catch (error) {
         console.log('Error:', error);
