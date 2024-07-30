@@ -12,7 +12,7 @@ import axios from "axios"
 const posts = ref([])
 const fetchPosts = async() => {
     try {
-        const response = await axios.get("/api/v1/posts")
+        const response = await axios.get("http://localhost:8080/api/v1/posts")
         console.log(response.data);
         posts.value = response.data.data
     } catch (error) {
@@ -20,7 +20,7 @@ const fetchPosts = async() => {
     }
 }
 
-const handleDelete = async () => {
+const handleDelete = async (postId) => {
     try {
         await axios.delete(`http://localhost:8080/api/v1/posts/${postId}`)
         fetchPosts()

@@ -2,7 +2,7 @@
   <div class="max-w-lg mx-auto">
     <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
       <a href="#">
-        <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+        <img class="rounded-t-lg" :src="post.image" alt="">
       </a>
       <div class="p-5">
         <a href="#">
@@ -24,21 +24,22 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue"
+import { defineProps, defineEmits } from "vue"
 import { RouterLink } from "vue-router";
 import {Trash2} from "lucide-vue-next"
-defineProps({
+const props = defineProps({
   post: {
     type: Object,
     required: true,
   }
 })
 
-const emits = defineEmits(["deletePost"])
+const emit = defineEmits(["delete"])
 
 const deletePost = () => {
-  emits("deletePost", post._id)
+  emit("delete", props.post._id)
 }
+
 
 </script>
 
